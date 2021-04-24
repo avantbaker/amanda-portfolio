@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 import FiraBold from '../public/fonts/FiraMono-Bold.ttf';
 import FiraMed from '../public/fonts/FiraMono-Medium.ttf';
 import FiraRegular from '../public/fonts/FiraMono-Regular.ttf';
@@ -44,6 +45,16 @@ export const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+	${normalize}
+	html {
+		box-sizing: border-box;
+	}
+	
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
   @font-face {
     font-family: "FiraBold";
     src: url(${FiraBold}) format('truetype');
