@@ -10,14 +10,14 @@ import {
 	Callout,
 } from '../../lib/styles/styles';
 
-export const TitleHeroSection = () => {
+export const TitleHeroSection = ({ title = 'Brand & Digital' }) => {
 	return (
 		<>
 			<TitleHero>
-				<TitleText textTransform="uppercase">Brand & Digital</TitleText>
+				<TitleText textTransform="uppercase">{title}</TitleText>
 			</TitleHero>
 			<ArrowContainer>
-				<RightArrow />
+				<RightArrow width="60px" />
 			</ArrowContainer>
 			<Callout>
 				<Text textTransform="uppercase">Atlanta-Based</Text>

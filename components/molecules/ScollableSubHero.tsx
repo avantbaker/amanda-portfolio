@@ -98,7 +98,7 @@ export const ScrollableItem = ({ title = '', subtitle = '', imgSrc = '' }) => {
 					<Text mb={24} zIndex={20} className="scrollable-item__title--sub">
 						{subtitle}
 					</Text>
-					<RightArrowWithSpace disableRotate />
+					<RightArrowWithSpace />
 					<HorizontalBar />
 				</div>
 				<div

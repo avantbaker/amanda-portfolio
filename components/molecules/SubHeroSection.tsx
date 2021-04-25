@@ -1,7 +1,7 @@
 import React from 'react';
 import { SubHero, SubheroText } from '../../lib/styles/styles';
 
-const UnderConstruction = () => {
+export const UnderConstruction = () => {
 	return (
 		<>
 			<SubheroText>Under</SubheroText>
@@ -10,10 +10,19 @@ const UnderConstruction = () => {
 		</>
 	);
 };
-export const SubHeroSection = ({ backgroundDisabled = false, children, ...rest }) => {
+export const SubHeroSection = ({
+	backgroundDisabled = false,
+	disableBorders = false,
+	children,
+	...rest
+}) => {
 	return (
-		<SubHero backgroundDisabled={backgroundDisabled} {...rest}>
-			<UnderConstruction />
+		<SubHero
+			backgroundDisabled={backgroundDisabled}
+			disableBorders={disableBorders}
+			{...rest}
+		>
+			{children}
 		</SubHero>
 	);
 };

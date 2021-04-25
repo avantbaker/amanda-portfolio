@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import media from './media';
 import Typography from '../../components/atoms/Text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,10 +10,16 @@ const RightArrowComponent = ({ ...rest }) => (
 	<FontAwesomeIcon {...rest} icon={faArrowRight} />
 );
 export const RightArrow = styled(RightArrowComponent)`
-	width: 60px;
+	width: 60px !important;
+	height: auto;
 	${media.large`
-		${({ disableRotate }) => !disableRotate && `transform: rotate(90deg);`} 
-	 width: 100px;
+		${({ disableRotate }) =>
+			!disableRotate &&
+			css`
+				transform: rotate(90deg);
+			`} 
+		width: 100px !important;
+		height: auto;
 	`}
 `;
 export const TitleText = styled(HeadingBold)`
@@ -151,6 +157,13 @@ export const SubHero = styled('div')`
 		background-image: url(/images/staticbackground.png);
 		background-size: cover;
 	`}
+	${({ disableBorders }) =>
+		disableBorders &&
+		`
+		border-bottom: none !important;
+		border-left: none !important;
+		border-right: none !important;
+	`}
 `;
 export const SubheroText = styled(HeadingBold)`
 	text-transform: uppercase;
@@ -172,6 +185,7 @@ export const NavigationWidget = styled('div')`
 	color: white;
 	padding: 12px 24px;
 	display: flex;
+	z-index: 1000000;
 `;
 
 export const ArrowComponent = ({ ...rest }) => (
