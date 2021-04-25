@@ -1,31 +1,51 @@
 import GlobalStyle from '../theme/index';
-import styled from 'styled-components';
 import Typography from '../components/atoms/Text';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import {
+	ScollableSubHero,
+	ScrollableItem,
+} from '../components/molecules/ScollableSubHero';
+import { Hero } from '../components/organisms/Hero';
+import { NavigationWidget, DownArrow } from '../lib/styles/styles';
 const { SubheadBold } = Typography;
-
-const NavigationWidget = styled('div')`
-	position: fixed;
-	bottom: 0;
-	background-color: black;
-	color: white;
-	padding: 12px 24px;
-	display: flex;
-`;
-
-const ArrowComponent = ({ ...rest }) => <FontAwesomeIcon {...rest} icon={faCaretDown} />;
-
-const DownArrow = styled(ArrowComponent)`
-	height: 24px;
-	margin-left: 24px;
-`;
 
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<GlobalStyle />
+			<Hero>
+				<ScollableSubHero backgroundDisabled>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="Kids in the Game"
+						subtitle="For Visual Soldiers"
+					/>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="FLS Transport"
+						subtitle="For BraketHaus"
+					/>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="Kids in the Game"
+						subtitle="For Visual Soldiers"
+					/>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="Kids in the Game"
+						subtitle="For Visual Soldiers"
+					/>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="Kids in the Game"
+						subtitle="For Visual Soldiers"
+					/>
+					<ScrollableItem
+						imgSrc="/images/adrien-converse-xzH7K6nVVgI-unsplash.jpeg"
+						title="Kids in the Game"
+						subtitle="For Visual Soldiers"
+					/>
+				</ScollableSubHero>
+			</Hero>
 			<Component {...pageProps} />
 			<NavigationWidget>
 				<SubheadBold style={{ display: 'flex' }}>

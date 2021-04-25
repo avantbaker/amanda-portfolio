@@ -13,7 +13,7 @@ const UnderConstruction = () => {
 export const SubHeroSection = ({ backgroundDisabled = false, children, ...rest }) => {
 	return (
 		<SubHero backgroundDisabled={backgroundDisabled} {...rest}>
-			{children}
+			<UnderConstruction />
 		</SubHero>
 	);
 };

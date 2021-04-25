@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import media from './media';
 import Typography from '../../components/atoms/Text';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 const { HeadingBold } = Typography;
 
 const RightArrowComponent = ({ ...rest }) => (
@@ -12,7 +12,7 @@ const RightArrowComponent = ({ ...rest }) => (
 export const RightArrow = styled(RightArrowComponent)`
 	width: 60px;
 	${media.large`
-	 transform: rotate(90deg);
+		${({ disableRotate }) => !disableRotate && `transform: rotate(90deg);`} 
 	 width: 100px;
 	`}
 `;
@@ -163,4 +163,22 @@ export const SubheroText = styled(HeadingBold)`
 		line-height: 65px;
 		font-size: 110px;
 	`}
+`;
+
+export const NavigationWidget = styled('div')`
+	position: fixed;
+	bottom: 0;
+	background-color: black;
+	color: white;
+	padding: 12px 24px;
+	display: flex;
+`;
+
+export const ArrowComponent = ({ ...rest }) => (
+	<FontAwesomeIcon {...rest} icon={faCaretDown} />
+);
+
+export const DownArrow = styled(ArrowComponent)`
+	height: 24px;
+	margin-left: 24px;
 `;
